@@ -50,7 +50,7 @@ export default defineConfig([
         "maxEOF": 0,
       }],
 
-      "quotes": ["error", "single", "backtick"],
+      "quotes": ["error", "single", { "allowTemplateLiterals": true }],
 
       "@typescript-eslint/prefer-as-const": "off",
       "@typescript-eslint/no-empty-function": "off",
