@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { MdSearch } from 'react-icons/md'
+import { MdSearch, MdClose } from 'react-icons/md'
 
 interface ISearchLineParams {
   searchCallback: (s: string) => void
@@ -35,6 +35,21 @@ export const SearchLine = ({ searchCallback }: ISearchLineParams) => {
           onChangeFilter(e.target.value)
         }}
       />
+
+      {search && (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation()
+            onChangeFilter('')
+          }}
+          className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 text-slate-400 hover:text-slate-700
+                    hover:bg-slate-100 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+          aria-label="Clear search"
+        >
+          <MdClose className="text-xl" />
+        </button>
+      )}
     </div>
   )
 }
