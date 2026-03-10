@@ -1,3 +1,5 @@
+**npm i**: install mpm modules
+
 **npm run dev**: dev build
 
 **npm run build**: build project
